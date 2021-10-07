@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+# This cluster role binding allows anyone in the "manager" group to read secrets in any namespace.
+kind: ClusterRoleBinding
+metadata:
+  name:  pvc-editor
+subjects:
+- kind: ServiceAccount
+  name: default # Name is case sensitive
+  namespace: couchdb
+roleRef:
+  kind: ClusterRole
+  name: pvc-editor
+  apiGroup: rbac.authorization.k8s.io
