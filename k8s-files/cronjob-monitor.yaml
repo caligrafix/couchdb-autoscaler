@@ -4,6 +4,8 @@ metadata:
   name: monitor-volumes-size
 spec:
   schedule: "*/5 * * * *"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
   jobTemplate:
     spec:
       completions: 1
@@ -12,7 +14,7 @@ spec:
           containers:
             - name: couchdb-k8s-stress-tests
               image: gitlab-registry.caligrafix.cl:443/ecaligrafix/couchdb-k8s-stress-tests:latest
-              args: ["--scenario", "4"]
+              args: ["--script", "1"]
               envFrom:
                 - secretRef:
                     name: couchdb-couchdb
