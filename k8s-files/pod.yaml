@@ -1,18 +1,17 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: couchdb-k8s-stress-tests-s-3
+  name: couchdb-k8s-stress-tests-s-0
   labels:
     type: Script
 spec:
   containers:
   - name: couchdb-k8s-stress-tests
     image: gitlab-registry.caligrafix.cl:443/ecaligrafix/couchdb-k8s-stress-tests:latest
-    args: ["--scenario", "3"]
+    args: ["--scenario", "0"]
     envFrom:
       - secretRef:
           name: couchdb-couchdb
   restartPolicy: Never
   imagePullSecrets:
   - name: caligrafixregistry
-    

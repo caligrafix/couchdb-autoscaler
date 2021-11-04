@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: monitor-volumes-size
 spec:
-  schedule: "*/1 * * * *"
+  schedule: "*/5 * * * *"
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 3
   jobTemplate:
