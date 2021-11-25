@@ -1,0 +1,11 @@
+recommender:
+  extraArgs:
+    history-length: 5m
+    history-resolution: 1m
+    cpu-histogram-decay-half-life: 0h5m0s
+    memory-aggregation-interval: 0h5m0s
+    memory-histogram-decay-half-life: 0h5m0s
+    memory-aggregation-interval-count: 8
+    pod-recommendation-min-cpu-millicores: 5
+    pod-recommendation-min-memory-mb: 64
+
