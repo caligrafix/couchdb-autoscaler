@@ -8,11 +8,11 @@ spec:
   mode: all
   selector:
     labelSelectors:
-      'app': 'couchdb'
+      "app": "couchdb"
   stressors:
     # memory:
     #   workers: 2
     #   size: '256MB'
     cpu:
-      workers: 1
+      workers: 2
       load: 50

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: load-test
+  labels:
+    app: load-test
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: load-test
+  template:
+    metadata:
+      labels:
+        app: load-test
+    spec:
+      containers:
+      - name: load-generator
+        image: busybox:1.27
+        command:
+        - /bin/sh
+        - -c
+        - 'while true; do wget -q -O http://couchdb-svc-couchdb.couchdb.svc.cluster.local:5984; done'
+        #- 'while true; do wget -q -O /dev/null http://couchdb-svc-couchdb.couchdb.svc.cluster.local:5984; done'
