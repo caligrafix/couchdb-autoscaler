@@ -96,7 +96,9 @@ affinity: {}
   #       topologyKey: "kubernetes.io/hostname"
 
 ## Optional pod annotations
-annotations: {}
+annotations:
+  cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
+
 
 ## Optional tolerations
 tolerations: []
