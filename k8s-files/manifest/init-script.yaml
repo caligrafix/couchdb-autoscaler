@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cluster-init
+  labels:
+    type: Script
+spec:
+  containers:
+  - name: couchdb-k8s-stress-tests
+    image: gitlab-registry.caligrafix.cl:443/ecaligrafix/couchdb-k8s-stress-tests:v131221
+    args: ["--script", "1"]
+    envFrom:
+      - secretRef:
+          name: couchdb-couchdb
+  restartPolicy: Never
+  imagePullSecrets:
+  - name: registry-credentials

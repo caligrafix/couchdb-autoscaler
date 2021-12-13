@@ -4,5 +4,5 @@ metadata:
   name: pod-exec
 rules:
 - apiGroups: [""]
-  resources: ["pods/exec"]
+  resources: ["pods", "pods/exec"]
   verbs: ["*"]
