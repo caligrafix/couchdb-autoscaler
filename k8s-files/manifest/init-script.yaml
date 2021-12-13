@@ -8,6 +8,7 @@ spec:
   containers:
   - name: couchdb-k8s-stress-tests
     image: gitlab-registry.caligrafix.cl:443/ecaligrafix/couchdb-k8s-stress-tests:v131221
+    imagePullPolicy: Always
     args: ["--script", "1"]
     envFrom:
       - secretRef:
