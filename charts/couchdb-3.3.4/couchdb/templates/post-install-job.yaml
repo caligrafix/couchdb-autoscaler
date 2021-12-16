@@ -27,5 +27,9 @@ spec:
       - name: registry-credentials
       containers:
       - name: post-install-job
-        image: gitlab-registry.caligrafix.cl:443/ecaligrafix/couchdb-k8s-stress-tests/init-scripts:v0
+        image: gitlab-registry.caligrafix.cl:443/ecaligrafix/couchdb-k8s-stress-tests:init-cluster
         imagePullPolicy: Always
+        args: ["--script", "1"]
+        envFrom:
+          - secretRef:
+              name: couchdb-couchdb

@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: couchdb-k8s-stress-tests
-    image: gitlab-registry.caligrafix.cl:443/ecaligrafix/couchdb-k8s-stress-tests:v131221
+    image: gitlab-registry.caligrafix.cl:443/ecaligrafix/couchdb-k8s-stress-tests:init-cluster
     imagePullPolicy: Always
     args: ["--script", "1"]
     envFrom:
