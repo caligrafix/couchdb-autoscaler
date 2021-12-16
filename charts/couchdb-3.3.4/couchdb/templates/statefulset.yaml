@@ -78,10 +78,10 @@ spec:
                 secretKeyRef:
                   name: {{ template "couchdb.fullname" . }}
                   key: cookieAuthSecret
-            - name: NODE
-              valueFrom:
-                fieldRef:
-                  fieldPath: spec.nodeName
+            # - name: NODE
+            #   valueFrom:
+            #     fieldRef:
+            #       fieldPath: spec.nodeName
 
 {{- end }}
             - name: ERL_FLAGS
