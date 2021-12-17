@@ -14,10 +14,10 @@ spec:
           containers:
             - name: couchdb-k8s-stress-tests
               image: gitlab-registry.caligrafix.cl:443/ecaligrafix/couchdb-k8s-stress-tests:latest
-              args: ["--script", "1"]
+              args: ["--script", "0"]
               envFrom:
                 - secretRef:
                     name: couchdb-couchdb
           restartPolicy: Never
           imagePullSecrets:
-          - name: caligrafixregistry
+          - name: registry-credentials
