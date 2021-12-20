@@ -19,5 +19,5 @@ spec:
         maxAllowed:
           cpu: 1
           memory: 1Gi
-        controlledResources: ["cpu"]  #["cpu", "memory"]
+        controlledResources: ["cpu", "memory"]  #["cpu", "memory"]
         controlledValues: RequestsAndLimits
